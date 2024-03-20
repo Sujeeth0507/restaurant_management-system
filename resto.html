@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Restaurant Management System</title>
+  <link rel="stylesheet" href="resto.css">
+</head>
+<body>
+  <header>
+    <h1>Restaurant Management System</h1>
+    <nav>
+      <ul>
+        <li><a href="#" id="menuLink">Menu Management</a></li>
+        <li><a href="#" id="ordersLink">Order Processing</a></li>
+        <li><a href="#" id="reservationsLink">Reservations</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="mainContent">
+    <section id="menuSection">
+        <h2>Menu Management</h2>
+        <div id="menuList">
+            <!-- Existing Menu items -->
+            <div class="menuItem">
+                <h3>Special of the Day</h3>
+                <p>Biriyani</p>
+                <p>Rs.250</p>
+                <button class="orderButton" onclick="orderFood('Biriyani')">Order</button>
+            </div>
+            <div class="menuItem">
+                <h3>Restaurant special</h3>
+                <p>Cheese Pasta</p>
+                <p>Rs.180</p>
+                <button class="orderButton" onclick="orderFood('Cheese Pasta')">Order</button>
+            </div>
+            <div class="menuItem">
+                <h3>Popular food</h3>
+                <p>Grilled Cheese</p>
+                <p>Rs.220</p>
+                <button class="orderButton" onclick="orderFood('Grilled Cheese')">Order</button>
+            </div>
+            <div class="menuItem">
+                <h3>Vegetarian Delight</h3>
+                <p>Veggie Burger</p>
+                <p>Rs.200</p>
+                <button class="orderButton" onclick="orderFood('Veggie Burger')">Order</button>
+            </div>
+            <div class="menuItem">
+                <h3>Dessert Heaven</h3>
+                <p>Chocolate Cake</p>
+                <p>Rs.150</p>
+                <button class="orderButton" onclick="orderFood('Chocolate Cake')">Order</button>
+            </div>
+        </div>
+    </section>
+</main>
+
+    <section id="ordersSection" style="display: none;">
+      <h2>Your Order is Processing... </h2>
+      <div id="orderStatus">
+        <p>Thank you for your order! We are currently processing it.</p>
+        <p>An email confirmation will be sent to you shortly.</p>
+      </div>
+    </section>    
+    <section id="reservationsSection" style="display: none;">
+      <h2>Reservations</h2>
+      <form id="reservationForm">
+        <div class="formInput">
+          <label for="customerName">Your Name:</label>
+          <input type="text" id="customerName" required>
+        </div>
+        <div class="formInput">
+          <label for="reservationDate">Reservation Date:</label>
+          <input type="date" id="reservationDate" required>
+        </div>
+        <div class="formInput">
+          <label for="reservationTime">Reservation Time:</label>
+          <input type="time" id="reservationTime" required>
+        </div>
+        <div class="formInput">
+          <label for="numGuests">Number of Guests:</label>
+          <input type="number" id="numGuests" min="1" required>
+        </div>
+        <div class="formInput">
+          <label for="selectedTable">Select Table:</label>
+          <select id="selectedTable" required>
+            <option value="" disabled selected>Select a table</option>
+            <option value="1">Table 1</option>
+            <option value="2">Table 2</option>
+            <option value="3">Table 3</option>
+          </select>
+        </div>
+        <button class="sub" type="submit">Reserve Table</button>
+      </form>
+    </section>
+  </main>
+  <script src="resto.js"></script>
+</body>
+</html>
